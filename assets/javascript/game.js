@@ -57,37 +57,63 @@ Madd : {
 //What is a game object?
 
 //wins and losses start at
-var correct = 0;
-var chances = 0;
-var incorrect = 8;
+var answerArray =[];
+var correctLettersArray = [];
+var incorrect = 0;
 
 //Create variables that hold reference to the places in HTML where we want to display things
-var correct = document.getElementById("correct")
-var chances = document.getElementById("chances")
-var incorrect = document.getElementById("incorrect")
+//var correct = document.getElementById("correct")
+// var chances = document.getElementById("chances")
+// var incorrect = document.getElementById("incorrect")
 
 //Computer chooses a random word
-var randomword= words[Math.floor(Math.random()*bandnames.length)];
+var randomword= bandnames[Math.floor(Math.random()*bandnames.length)];
+    console.log("the computer choses" + "")
+
+function createAnswerArrays()
+{
+    for(i=0; i<answerarray.length; i++)
+    {
+        answerArray.push(answer.charAt(i));
+        correctLettersArray.push("-");
+    }
+}
+
+function checkLetter(letter)
+{
+    hasMatch = false;
+    for(i=0; i<answerArray.length; i++)
+    {
+        if(answerArray[i].toLowerCase() === letter.toLowerCase())
+        {
+            correctLettersArray[i] = answerArray[i];
+            hasMatch = true;
+        }
+    }
+    if (!hasMatch)
+    {
+        incorrect++;
+    }
+}
 
 //for loops for to check on answers against random word
 
-var answerarray =[];
-for (var i=0; i< bandnames.length, i++) {answerarray[i] ="-";}
+// var answerarray =[];
+// for (var i=0; i < bandnames.length; i++) {
+//     answerarray[i] ="-";}
 
-var remainingletters =bandnames.length;
+// var remainingletters =bandnames.length;
 
 //showing players progress -----look up JS output to write in HTML
-alert(answerarray).join("");
 
 //Taking user input
-
-document.onkeypress = function(e) {
-    e = e || window.event;
-    var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
-    if (charCode) {
-        alert("Character typed: " + String.fromCharCode(charCode));
-    }
-};
+// document.onkeypress = function(e) {
+//     e = e || answerarray.event;
+//     var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
+//     if (charCode) {
+//         console.log("Character typed: " + String.fromCharCode(charCode));
+//     }
+// };
 
 //Function for computer to guess and to check on letters of words
 
