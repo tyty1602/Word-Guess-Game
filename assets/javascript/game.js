@@ -60,6 +60,8 @@ Madd : {
 var answerArray =[];
 var correctLettersArray = [];
 var incorrect = 0;
+var guessedLetter = [];
+var displayWord ="";
 
 //Create variables that hold reference to the places in HTML where we want to display things
 //var correct = document.getElementById("correct")
@@ -67,8 +69,17 @@ var incorrect = 0;
 // var incorrect = document.getElementById("incorrect")
 
 //Computer chooses a random word
-var randomword= bandnames[Math.floor(Math.random()*bandnames.length)];
-    console.log("the computer choses" + "")
+var randomword= bandnames[Math.floor(Math.random() * bandnames.length)];
+    console.log(randomword);
+    displayWord += "-";
+    var gotdiv = document.getElementById("theWord"); gotdiv.innerHTML=displayWord;
+
+
+for (var i=0; i < bandnames.length; i++) {
+        randomword +="-";
+        document.getElementById("theWord").innerHTML = randomword;
+}
+
 
 function createAnswerArrays()
 {
@@ -78,6 +89,7 @@ function createAnswerArrays()
         correctLettersArray.push("-");
     }
 }
+
 
 function checkLetter(letter)
 {
@@ -99,9 +111,7 @@ function checkLetter(letter)
 //for loops for to check on answers against random word
 
 // var answerarray =[];
-// for (var i=0; i < bandnames.length; i++) {
-//     answerarray[i] ="-";}
-
+//
 // var remainingletters =bandnames.length;
 
 //showing players progress -----look up JS output to write in HTML
