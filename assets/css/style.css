@@ -1,0 +1,53 @@
+/* dynamic background */
+html {
+    height: 100%;
+  }
+  body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .bottomAnim {
+    border: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: pink url("https://png.pngtree.com/thumb_back/fw800/back_pic/02/51/58/93578260e04c4e6.jpg") left repeat-x;
+    background-position: bottom;
+    z-index: -1000;
+  }
+  @media (max-height: 700px) {
+    .bottomAnim {
+      background-size: auto 65%;
+    }
+  }
+/* End of background */
+/* Container holding both cards */
+.container {
+    margin: 8% 0 0 25%;
+}
+/* Cards */
+.cardOne {
+    margin-right: 15%;
+    border: solid 5px black;
+    border-style: inset;
+}
+.cardTwo {
+    border: solid 5px black;
+    border-style: inset;
+}
+/* H1,2,3,4,5 */
+h1 {
+    text-align: center;
+    margin-top: 5%;
+}
+h4 {
+    text-align: center;
+}
+/* The word */
+.theWord {
+    text-align: center;
+    
+}
